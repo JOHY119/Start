@@ -7,12 +7,12 @@ import java.util.NoSuchElementException;
  * 定容栈
  * Created by Johnny on 2016/11/11.
  */
-public class FixedCapacityStack<Item> implements Iterable<Item> {
+public class ArrayStack<Item> implements Iterable<Item> {
     private Item[] a;
     //    表示容量
     private int n;
 
-    public FixedCapacityStack() {
+    public ArrayStack() {
         a = (Item[]) new Object[1];
         n=0;
     }
