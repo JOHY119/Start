@@ -2,7 +2,7 @@ package myClass.useCase;
 
 import myClass.ArrayStack;
 
-/**
+/**ArrayStack测试用例.
  * Created by Johnny on 2016/11/13.
  */
 public class TestArrayStack {
@@ -20,5 +20,10 @@ public class TestArrayStack {
             a.pop();
         }
         System.out.println("pop: " + (System.currentTimeMillis() - b2));
+
+
+
+
+
     }
 }

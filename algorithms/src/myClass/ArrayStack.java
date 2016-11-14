@@ -8,12 +8,12 @@ import java.util.NoSuchElementException;
  * Created by Johnny on 2016/11/11.
  */
 public class ArrayStack<Item> implements Iterable<Item> {
-    private Item[] a;
+    private Item[] s;
     //    表示容量
     private int n;
 
     public ArrayStack() {
-        a = (Item[]) new Object[1];
+        s = (Item[]) new Object[1];
         n=0;
     }
 
@@ -23,26 +23,26 @@ public class ArrayStack<Item> implements Iterable<Item> {
 
     private void resize(int max) {
         Item[] temp = (Item[]) new Object[max];
-        System.arraycopy(a, 0, temp, 0, n);
-        a = temp;
+        System.arraycopy(s, 0, temp, 0, n);
+        s = temp;
     }
 
     public void push(Item s) {
 
-        if (n == a.length) resize(2 * n);
+        if (n == this.s.length) resize(2 * n);
 
-        a[n] = s;
+        this.s[n] = s;
         n++;
     }
 
     public Item pop() {
         n--;
-        Item temp = a[n];
+        Item temp = s[n];
         //避免对象游离
-        a[n] = null;
+        s[n] = null;
         //如果现有元素数量为数组长度的1/4,数组缩短为原来的1/2
         //这样可以使数组长度减半后,维持在半满状态
-        if (n == a.length / 4) resize(a.length / 2);
+        if (n == s.length / 4) resize(s.length / 2);
         return temp;
     }
 
@@ -65,7 +65,7 @@ public class ArrayStack<Item> implements Iterable<Item> {
         public Item next() {
             if (!hasNext()) throw new NoSuchElementException();
             i--;
-            return a[i];
+            return s[i];
         }
     }
 }
