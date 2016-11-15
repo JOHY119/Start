@@ -1,5 +1,7 @@
 package myClass;
 
+import edu.princeton.cs.algs4.StdIn;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -45,6 +47,15 @@ public class Stack<Item> implements Iterable<Item> {
         return temp;
     }
 
+    public Item peek(){
+        if (isEmpty()) {
+            throw new NoSuchElementException("Stack OverFlow");
+        }
+        Item temp=head.item;
+        return temp;
+    }
+
+
     @Override
     public Iterator<Item> iterator() {
         return new ListIterator();
@@ -68,25 +79,19 @@ public class Stack<Item> implements Iterable<Item> {
     }
 
     public static void main(String[] args) {
-        Stack<Integer> s = new Stack<>();
+        Stack<String> s = new Stack<>();
 
-        int n = 10000000;
-        long b1 = System.currentTimeMillis();
-        for (int i = 0; i < n; i++) {
-            s.push(i);
+        while (!StdIn.isEmpty()) {
+            String in= StdIn.readString();
+
+            if (!in.equals("-")) {
+                s.push(in);
+            } else {
+                System.out.print(s.pop()+" ");
+            }
         }
 
-        System.out.println("push: " + (System.currentTimeMillis() - b1));
-
-        long b2 = System.currentTimeMillis();
-        for (Integer integer : s) {
-            s.pop();
-        }
-        System.out.println("pop: " + (System.currentTimeMillis() - b2));
-
-
-        //        s.forEach(System.out::println);
-
+        System.out.println("("+s.size()+")");
     }
 
 }
