@@ -9,7 +9,7 @@ public class TestArrayStack {
     public static void main(String[] args) {
         ArrayStack<Integer> a = new ArrayStack<>();
 
-        int n = 1000000;
+        int n = 10000000;
         long b1 = System.currentTimeMillis();
         for (int i = 0; i < n; i++) {
             a.push(i);

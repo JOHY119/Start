@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * 定容栈
+ * 数组栈
  * Created by Johnny on 2016/11/11.
  */
 public class ArrayStack<Item> implements Iterable<Item> {

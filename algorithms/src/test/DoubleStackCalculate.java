@@ -4,16 +4,16 @@ import edu.princeton.cs.algs4.StdIn;
 
 import java.util.Stack;
 
-/**
+/**双栈法计算表达式.
+ * 每个符号之间用空格隔开.
  * Created by Johnny on 2016/11/8.
  */
 
 
-public class MyTest {
+public class DoubleStackCalculate {
     public static void main(String[] args) {
         Stack<Double> sNumber = new Stack<>();
         Stack<String> sOp = new Stack<>();
-
 
         while (!StdIn.isEmpty()) {
             String s = StdIn.readString();
